@@ -25,8 +25,7 @@ def urlify_swap_in_place(string, true_len):
     if s[i] != ' ':
       s[i+offset] = s[i]
     if s[i] == ' ':
-      # wedge
       for j in range(len(wedge)):
         s[i+offset-j] = wedge[j]
       offset -= 2
-  return s
+  return ''.join(s)
