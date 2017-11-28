@@ -6,4 +6,16 @@
 # can assume the string has only uppercase and lowercase letters (a-z).
 
 def string_compression(s):
-  return
+  r = ''
+  count = 1
+  for i in range(len(s)):
+    cur = s[i]
+    next = s[i+1] if i+1 < len(s) else None
+    if next and cur == next:
+      count += 1
+    else:
+      r += cur+str(count)
+      count = 1
+  if len(r) > len(s):
+    return s
+  return r
