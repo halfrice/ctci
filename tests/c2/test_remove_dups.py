@@ -26,3 +26,10 @@ def test_remove_dups():
   ll.stringify()
   ll.remove_dups('c')
   assert ll.stringify() == 'cdba'
+
+def test_remove_dups_no_buffer():
+  ll.add('c')
+  ll.add('c')
+  ll.add('x')
+  ll.remove_dups_no_buffer('c')
+  assert ll.stringify() == 'dbaxc'
