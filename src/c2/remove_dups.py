@@ -3,9 +3,6 @@
 # Write code to remove duplicates from an unsorted linked list. How would you solve this problem
 # if a temporary buffer is not allowed?
 
-# def remove_dups(ll):
-#   return
-
 class Node:
   def __init__(self, data=None):
     self.data = data
@@ -55,6 +52,10 @@ class LinkedList:
       else:
         prev = node
       node = node.next
+
+  def remove_dups_no_buffer(self, data):
+    self.remove(data)
+    self.add(data)
 
   def stringify(self):
     node = self.head
