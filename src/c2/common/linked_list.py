@@ -17,12 +17,15 @@ class LinkedList:
     node = self.head
     prev = None
     while node:
-      if node.data == data and prev:
-        prev.next = node.next
-      elif node.data == data and not prev:
-        self.head = node.next
+      if node.data == data:
+        if prev:
+          prev.next = node.next
+        else:
+          self.head = node.next
+        return True
       prev = node
       node = node.next
+    return False
 
   def stringify(self):
     node = self.head

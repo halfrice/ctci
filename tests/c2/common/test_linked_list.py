@@ -10,17 +10,15 @@ def test_add():
   ll.add('a')
   assert ll.is_empty() is False
   ll.add('b')
+  ll.add('b')
   ll.add('c')
+  ll.add('c')
+  ll.add('c')
+  ll.add('b')
+  ll.add('b')
+  ll.add('a')
+  assert ll.stringify() == 'abbcccbba'
 
 def test_remove():
-  ll.remove('c')
-  ll.remove('b')
-  ll.remove('a')
-  assert ll.is_empty() is True
-
-def test_stringify():
-  ll.add('o')
-  ll.add('a')
-  ll.add('m')
-  ll.add('l')
-  assert ll.stringify() == 'lmao'
+  assert ll.remove('c') is True
+  assert ll.stringify() == 'abbccbba'
